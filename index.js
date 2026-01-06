@@ -1,8 +1,9 @@
 (() => {
   "use strict";
 
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)")
-    .matches;
+  const prefersReduced = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
 
   // =========================
   // Elements
@@ -16,14 +17,16 @@
   const navLinks = Array.from(document.querySelectorAll(".nav__link"));
 
   const revealEls = Array.from(document.querySelectorAll("[data-reveal]"));
+
   const scene = document.getElementById("scene");
 
-  const honorsLink = document.getElementById("honorsLink");
+  const form = document.querySelector("form.form");
+  const statusEl = document.getElementById("formStatus");
 
   // =========================
   // Footer year
   // =========================
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  if (yearEl) yearEl.textContent = `${new Date().getFullYear()}`;
 
   // =========================
   // Nav: mobile toggle
@@ -105,7 +108,13 @@
   // =========================
   // Nav active states (IntersectionObserver)
   // =========================
-  const sectionIds = ["#about", "#services", "#process", "#portfolio", "#contact"];
+  const sectionIds = [
+    "#about",
+    "#services",
+    "#process",
+    "#portfolio",
+    "#contact",
+  ];
   const sections = sectionIds
     .map((id) => document.querySelector(id))
     .filter(Boolean);
@@ -142,7 +151,7 @@
   }
 
   // =========================
-  // Reveal entrances
+  // Reveal entrances (ONE system)
   // =========================
   const show = (el) => el.classList.add("is-visible");
 
@@ -218,11 +227,23 @@
     parallax();
   }
 
-  // Honors alert
+  // Honors link alert
+  const honorsLink = document.getElementById("honorsLink");
   honorsLink?.addEventListener("click", (e) => {
     e.preventDefault();
     alert("Website Under Construction");
   });
+
+  // =========================
+  // Demo form submit (no network)
+  // (left intact; you can hook Formspree normally)
+  // =========================
+  if (form && statusEl) {
+    form.addEventListener("submit", () => {
+      // Let Formspree handle the real submit; this is optional UI feedback only
+      statusEl.textContent = "Sending...";
+    });
+  }
 
   // ============================================================
   // Services interactive selector (YOUR REAL OFFERS)
@@ -299,8 +320,9 @@
     btn.classList.add("is-active");
     btn.setAttribute("aria-selected", "true");
 
+    // Spark swirl on click (kept from your original)
     btn.classList.remove("svc-spark");
-    void btn.offsetWidth;
+    void btn.offsetWidth; // restart animation
     btn.classList.add("svc-spark");
     btn.addEventListener(
       "animationend",
@@ -322,59 +344,57 @@
   renderSvc("design");
 
   // ============================================================
-  // Process Timeline (FIXED)
+  // Process Timeline (FULL FEATURED + NO DELIVERABLES)
   // ============================================================
- const STEPS = [
-  {
-    step: "Step 1",
-    title: "Discovery",
-    lead:
-      "We learn your goals and your customers. " +
-      "We get clear on what the website must do.",
-    bullets: [
-      "We ask simple questions about your business",
-      "We list the main pages you need",
-      "We talk about timeline, budget, and content",
-      "We agree on what success looks like",
-    ],
-  },
-  {
-    step: "Step 2",
-    title: "Plan & Design",
-    lead:
-      "We plan the site so it is easy to use. " +
-      "Then we design a clean look that feels premium.",
-    bullets: [
-      "We set up the navigation and page order",
-      "We sketch simple page layouts",
-      "We choose fonts, spacing, and style",
-    ],
-  },
-  {
-    step: "Step 3",
-    title: "Build",
-    lead: "We build the website and make it work on every device.",
-    bullets: [
-      "We build mobile-first sections",
-      "We keep the site smooth and fast",
-      "We test the site for basic accessibility",
-    ],
-  },
-  {
-    step: "Step 4",
-    title: "Launch",
-    lead:
-      "We launch your site and make sure everything is working. " +
-      "We can also help with updates after launch.",
-    bullets: [
-      "We run a final launch checklist",
-      "We help with domain and hosting if needed",
-      "We share simple handoff notes",
-    ],
-  },
-];
-
-     
+  const STEPS = [
+    {
+      step: "Step 1",
+      title: "Discovery",
+      lead:
+        "We learn your goals and your customers. " +
+        "We get clear on what the website must do.",
+      bullets: [
+        "We ask simple questions about your business",
+        "We list the main pages you need",
+        "We talk about timeline, budget, and content",
+        "We agree on what success looks like",
+      ],
+    },
+    {
+      step: "Step 2",
+      title: "Plan & Design",
+      lead:
+        "We plan the site so it is easy to use. " +
+        "Then we design a clean look that feels premium.",
+      bullets: [
+        "We set up the navigation and page order",
+        "We sketch simple page layouts",
+        "We choose fonts, spacing, and style",
+      ],
+    },
+    {
+      step: "Step 3",
+      title: "Build",
+      lead: "We build the website and make it work on every device.",
+      bullets: [
+        "We build mobile-first sections",
+        "We keep the site nice & smooth",
+        "We test the site for basic accessibility",
+      ],
+    },
+    {
+      step: "Step 4",
+      title: "Launch",
+      lead:
+        "We launch your site and make sure everything is working. " +
+        "We can also help with updates after launch.",
+      bullets: [
+        "We run a final launch checklist",
+        "We help with domain and hosting if needed",
+        "We share simple handoff notes",
+      ],
+    },
+  ];
 
   const timeline = document.getElementById("timeline");
   const cards = Array.from(document.querySelectorAll(".tCard"));
@@ -387,7 +407,6 @@
   const tTitle = document.getElementById("tTitle");
   const tLead = document.getElementById("tLead");
   const tBullets = document.getElementById("tBullets");
-  const tDeliver = document.getElementById("tDeliver");
 
   let activeIndex = -1;
   let lastFocusedEl = null;
@@ -423,16 +442,6 @@
         const li = document.createElement("li");
         li.textContent = b;
         tBullets.appendChild(li);
-      });
-    }
-
-    if (tDeliver) {
-      tDeliver.innerHTML = "";
-      s.deliverables.forEach((d) => {
-        const chip = document.createElement("span");
-        chip.className = "tChip";
-        chip.textContent = d;
-        tDeliver.appendChild(chip);
       });
     }
   };
@@ -485,7 +494,9 @@
 
   if (timeline && cards.length) {
     cards.forEach((card) => {
-      card.addEventListener("click", () => openStep(Number(card.dataset.step)));
+      card.addEventListener("click", () =>
+        openStep(Number(card.dataset.step))
+      );
 
       card.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") {
