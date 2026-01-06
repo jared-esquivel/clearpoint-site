@@ -372,8 +372,7 @@
       bullets: [
         "We set up the navigation and page order",
         "We sketch simple page layouts",
-        "We choose fonts, spacing, and style",
-        "We place clear buttons and calls to action",
+        "We choose fonts, spacing, and style"
       ],
       deliverables: [
         "Wireframes",
@@ -386,13 +385,11 @@
       step: "Step 3",
       title: "Build",
       lead:
-        "We build the website and make it work on every device. " +
-        "We also focus on speed and clean structure.",
-      bullets: [
+        "We build the website and make it work on every device. "
+        bullets: [
         "We build mobile-first sections",
-        "We keep the site fast and smooth",
-        "We set up headings and page titles for search",
-        "We test the site for basic accessibility",
+        "We keep the site nice & smooth",
+        "We test the site for basic accessibility"
       ],
       deliverables: [
         "Working website",
@@ -411,7 +408,6 @@
         "We run a final launch checklist",
         "We help with domain and hosting if needed",
         "We share simple handoff notes",
-        "We handle small fixes after launch",
       ],
       deliverables: [
         "Launch checklist",
