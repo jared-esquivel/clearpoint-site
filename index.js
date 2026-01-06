@@ -1,9 +1,8 @@
 (() => {
   "use strict";
 
-  const prefersReduced = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)")
+    .matches;
 
   // =========================
   // Elements
@@ -17,17 +16,14 @@
   const navLinks = Array.from(document.querySelectorAll(".nav__link"));
 
   const revealEls = Array.from(document.querySelectorAll("[data-reveal]"));
-
   const scene = document.getElementById("scene");
 
-  const form = document.querySelector("form.form");
-  const statusEl = document.getElementById("formStatus");
+  const honorsLink = document.getElementById("honorsLink");
 
   // =========================
   // Footer year
   // =========================
-  // Your footer already includes text around the year; this sets the span only.
-  if (yearEl) yearEl.textContent = `${new Date().getFullYear()}`;
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
   // =========================
   // Nav: mobile toggle
@@ -109,13 +105,7 @@
   // =========================
   // Nav active states (IntersectionObserver)
   // =========================
-  const sectionIds = [
-    "#about",
-    "#services",
-    "#process",
-    "#portfolio",
-    "#contact",
-  ];
+  const sectionIds = ["#about", "#services", "#process", "#portfolio", "#contact"];
   const sections = sectionIds
     .map((id) => document.querySelector(id))
     .filter(Boolean);
@@ -152,7 +142,7 @@
   }
 
   // =========================
-  // Reveal entrances (ONE system)
+  // Reveal entrances
   // =========================
   const show = (el) => el.classList.add("is-visible");
 
@@ -228,22 +218,14 @@
     parallax();
   }
 
-  //this makes a alert in js saying that the
-  //honors website is underway
-
-  const honorsLink = document.getElementById("honorsLink");
+  // Honors alert
   honorsLink?.addEventListener("click", (e) => {
     e.preventDefault();
     alert("Website Under Construction");
   });
 
-  // =========================
-  // Demo form submit (no network)
-  // =========================
-
   // ============================================================
   // Services interactive selector (YOUR REAL OFFERS)
-  // COPY SUMMARY REMOVED
   // ============================================================
   const svcData = {
     design: {
@@ -317,9 +299,8 @@
     btn.classList.add("is-active");
     btn.setAttribute("aria-selected", "true");
 
-    // Spark swirl on click (kept from your original)
     btn.classList.remove("svc-spark");
-    void btn.offsetWidth; // restart animation
+    void btn.offsetWidth;
     btn.classList.add("svc-spark");
     btn.addEventListener(
       "animationend",
@@ -341,7 +322,7 @@
   renderSvc("design");
 
   // ============================================================
-  // Process Timeline (UNCHANGED from your file)
+  // Process Timeline (FIXED)
   // ============================================================
   const STEPS = [
     {
@@ -356,12 +337,7 @@
         "We talk about timeline, budget, and content",
         "We agree on what success looks like",
       ],
-      deliverables: [
-        "Project notes",
-        "Page list",
-        "Basic timeline",
-        "Next steps",
-      ],
+      deliverables: ["Project notes", "Page list", "Basic timeline", "Next steps"],
     },
     {
       step: "Step 2",
@@ -372,31 +348,20 @@
       bullets: [
         "We set up the navigation and page order",
         "We sketch simple page layouts",
-        "We choose fonts, spacing, and style"
+        "We choose fonts, spacing, and style",
       ],
-      deliverables: [
-        "Wireframes",
-        "Style direction",
-        "Page layout plan",
-        "Design draft",
-      ],
+      deliverables: ["Wireframes", "Style direction", "Page layout plan", "Design draft"],
     },
     {
       step: "Step 3",
       title: "Build",
-      lead:
-        "We build the website and make it work on every device. "
-        bullets: [
+      lead: "We build the website and make it work on every device.",
+      bullets: [
         "We build mobile-first sections",
         "We keep the site nice & smooth",
-        "We test the site for basic accessibility"
+        "We test the site for basic accessibility",
       ],
-      deliverables: [
-        "Working website",
-        "Mobile layout",
-        "Speed checks",
-        "QA review",
-      ],
+      deliverables: ["Working website", "Mobile layout", "Speed checks", "QA review"],
     },
     {
       step: "Step 4",
@@ -409,12 +374,7 @@
         "We help with domain and hosting if needed",
         "We share simple handoff notes",
       ],
-      deliverables: [
-        "Launch checklist",
-        "Handoff notes",
-        "Go-live support",
-        "Update options",
-      ],
+      deliverables: ["Launch checklist", "Handoff notes", "Go-live support", "Update options"],
     },
   ];
 
