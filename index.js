@@ -324,56 +324,56 @@
   // ============================================================
   // Process Timeline (FIXED)
   // ============================================================
-  const STEPS = [
-    {
-      step: "Step 1",
-      title: "Discovery",
-      lead:
-        "We learn your goals and your customers. " +
-        "We get clear on what the website must do.",
-      bullets: [
-        "We ask simple questions about your business",
-        "We list the main pages you need",
-        "We talk about timeline, budget, and content",
-        "We agree on what success looks like",
-      ],
-      deliverables: ["Project notes", "Page list", "Basic timeline", "Next steps"],
-    },
-    {
-      step: "Step 2",
-      title: "Plan & Design",
-      lead:
-        "We plan the site so it is easy to use. " +
-        "Then we design a clean look that feels premium.",
-      bullets: [
-        "We set up the navigation and page order",
-        "We sketch simple page layouts",
-        "We choose fonts, spacing, and style",
-      ],
-      deliverables: ["Wireframes", "Style direction", "Page layout plan", "Design draft"],
-    },
-    {
-      step: "Step 3",
-      title: "Build",
-      lead: "We build the website and make it work on every device.",
-      bullets: [
-        "We build mobile-first sections",
-        "We keep the site nice & smooth",
-        "We test the site for basic accessibility",
-      ],
-      deliverables: ["Working website", "Mobile layout", "Speed checks", "QA review"],
-    },
-    {
-      step: "Step 4",
-      title: "Launch",
-      lead:
-        "We launch your site and make sure everything is working. " +
-        "We can also help with updates after launch.",
-      bullets: [
-        "We run a final launch checklist",
-        "We help with domain and hosting if needed",
-        "We share simple handoff notes",
-      ],
+ const STEPS = [
+  {
+    step: "Step 1",
+    title: "Discovery",
+    lead:
+      "We learn your goals and your customers. " +
+      "We get clear on what the website must do.",
+    bullets: [
+      "We ask simple questions about your business",
+      "We list the main pages you need",
+      "We talk about timeline, budget, and content",
+      "We agree on what success looks like",
+    ],
+  },
+  {
+    step: "Step 2",
+    title: "Plan & Design",
+    lead:
+      "We plan the site so it is easy to use. " +
+      "Then we design a clean look that feels premium.",
+    bullets: [
+      "We set up the navigation and page order",
+      "We sketch simple page layouts",
+      "We choose fonts, spacing, and style",
+    ],
+  },
+  {
+    step: "Step 3",
+    title: "Build",
+    lead: "We build the website and make it work on every device.",
+    bullets: [
+      "We build mobile-first sections",
+      "We keep the site smooth and fast",
+      "We test the site for basic accessibility",
+    ],
+  },
+  {
+    step: "Step 4",
+    title: "Launch",
+    lead:
+      "We launch your site and make sure everything is working. " +
+      "We can also help with updates after launch.",
+    bullets: [
+      "We run a final launch checklist",
+      "We help with domain and hosting if needed",
+      "We share simple handoff notes",
+    ],
+  },
+];
+
      
 
   const timeline = document.getElementById("timeline");
