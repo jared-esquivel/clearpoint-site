@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>Clearpoint Web Development & Strategy</title>
+    <meta
+      name="description"
+      content="Executive, strategy-first web development and consulting. Clearpoint Web Development & Strategy."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="topbar" id="topbar">
+      <div id="moveleft" class="topbar__inner">
+        <a class="brand" href="#top" aria-label="Clearpoint home">
+          <img
+            class="brand__logo"
+            src="/assets/NewLogo.png"
+            alt="Clearpoint logo"
+            width="42"
+            height="42"
+            loading="eager"
+            decoding="async"
+          />
+          <span class="brand__text">
+            <span class="brand__name">Clearpoint</span>
+            <span class="brand__tag">Web Development & Strategy</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <button
+            class="nav__toggle"
+            id="navToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMenu"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav__icon" aria-hidden="true"></span>
+          </button>
+
+          <!-- ✅ FIXED: single UL -->
+          <ul class="nav__menu" id="navMenu">
+            <li><a class="nav__link" href="#about">About</a></li>
+            <li><a class="nav__link" href="#services">Services</a></li>
+            <li><a class="nav__link" href="#process">Process</a></li>
+            <li><a class="nav__link" href="#portfolio">Portfolio</a></li>
+            <li><a class="nav__link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="topbar__progress" aria-hidden="true">
+        <span id="scrollProgress"></span>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Banner Image -->
+      <section class="hero" aria-label="Hero"></section>
+
+      <!-- ABOUT -->
+      <section class="section" id="about" aria-label="About Clearpoint">
+        <div class="container">
+          <div class="section__head">
+            <div class="section__title reveal" data-reveal>
+              <p class="eyebrow">About</p>
+              <h2>We build websites that are easy to understand.</h2>
+            </div>
+
+            <p class="section__desc reveal" data-reveal>
+              <strong>
+                Clearpoint helps small businesses get a clear website that
+                people can use right away.
+              </strong>
+            </p>
+          </div>
+
+          <div class="aboutSimple reveal" data-reveal>
+            <div class="glass-card">
+              <h3>What we do</h3>
+              <p>
+                We design and build websites for your business. We make the
+                message clear and the pages easy to use.
+              </p>
+            </div>
+
+            <div class="glass-card">
+              <h3>Why it matters</h3>
+              <p>
+                If a website feels confusing, people leave. A clear website
+                helps people stay and take action.
+              </p>
+            </div>
+
+            <div class="glass-card">
+              <h3>Our simple rule</h3>
+              <p>
+                People should always know what to do next. We build pages that
+                guide visitors step by step.
+              </p>
+
+              <p class="muted" style="margin-top: 0.5rem">
+                Understand → Trust → Act
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <!-- SERVICES -->
+      <section class="section" id="services" aria-label="Services">
+        <div class="container">
+          <div class="section__head">
+            <div class="section__title reveal" data-reveal>
+              <p class="eyebrow">Services</p>
+              <h2>What we do for your business.</h2>
+            </div>
+
+            <p class="section__desc reveal" data-reveal>
+              <strong>
+                We design, build, and redesign websites that are clear, modern,
+                and easy to use.
+              </strong>
+            </p>
+          </div>
+
+          <div class="svc reveal" data-reveal>
+            <div class="svc__left glass-card" aria-label="Service selector">
+              <p class="svc__hint muted">
+                Click a service to see what you get.
+              </p>
+
+              <div class="svc__tabs" role="tablist" aria-label="Services">
+                <button
+                  class="svc__tab is-active"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="svcFeatured"
+                  data-svc="design"
+                  type="button"
+                >
+                  <span class="svc__tabTitle">Web Design</span>
+                  <span class="svc__tabSub">Visual layout & structure</span>
+                </button>
+
+                <button
+                  class="svc__tab"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="svcFeatured"
+                  data-svc="build"
+                  type="button"
+                >
+                  <span class="svc__tabTitle">Website Building</span>
+                  <span class="svc__tabSub">Custom or platform-based</span>
+                </button>
+
+                <button
+                  class="svc__tab"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="svcFeatured"
+                  data-svc="redesign"
+                  type="button"
+                >
+                  <span class="svc__tabTitle">Website Redesign</span>
+                  <span class="svc__tabSub">Improve an existing site</span>
+                </button>
+              </div>
+
+              <div class="svc__prompt" aria-label="Quick prompt">
+                <p class="muted">
+                  You’ll always see the design direction before the website is
+                  built.
+                </p>
+              </div>
+            </div>
+
+            <div class="svc__right glass-card" aria-label="Service details">
+              <div
+                class="svc__featured"
+                id="svcFeatured"
+                role="tabpanel"
+                tabindex="0"
+              >
+                <!-- JS renders the active service here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="section" id="process" aria-label="Process timeline">
+        <div class="container">
+          <div class="section__head">
+            <div class="section__title reveal" data-reveal>
+              <p class="eyebrow">Process</p>
+              <h2>Here is what happens, step by step.</h2>
+            </div>
+
+            <p class="section__desc reveal" data-reveal>
+              <strong>
+                Click a step to see what you get and what comes next.
+              </strong>
+            </p>
+          </div>
+
+          <p class="sr-only" id="processLive" aria-live="polite"></p>
+
+          <div class="timelineWrap reveal" data-reveal>
+            <div class="tRail" aria-hidden="true">
+              <span class="tRail__base"></span>
+              <span class="tRail__prog" id="tProg"></span>
+            </div>
+
+            <ol
+              class="timeline"
+              id="timeline"
+              aria-label="Clearpoint process steps"
+            >
+              <li class="tItem" style="--i: 0">
+                <button
+                  class="tCard glass-card"
+                  type="button"
+                  data-step="0"
+                  aria-expanded="false"
+                >
+                  <span class="tNode" aria-hidden="true"></span>
+                  <span class="tMeta">
+                    <span class="tKicker">Step 1</span>
+                    <span class="tTitle">Discovery</span>
+                    <span class="tSummary muted"
+                      >We learn your goals and what your customers need.</span
+                    >
+                  </span>
+                </button>
+              </li>
+
+              <li class="tItem" style="--i: 1">
+                <button
+                  class="tCard glass-card"
+                  type="button"
+                  data-step="1"
+                  aria-expanded="false"
+                >
+                  <span class="tNode" aria-hidden="true"></span>
+                  <span class="tMeta">
+                    <span class="tKicker">Step 2</span>
+                    <span class="tTitle">Plan & Design</span>
+                    <span class="tSummary muted"
+                      >We plan the pages and design a clean look.</span
+                    >
+                  </span>
+                </button>
+              </li>
+
+              <li class="tItem" style="--i: 2">
+                <button
+                  class="tCard glass-card"
+                  type="button"
+                  data-step="2"
+                  aria-expanded="false"
+                >
+                  <span class="tNode" aria-hidden="true"></span>
+                  <span class="tMeta">
+                    <span class="tKicker">Step 3</span>
+                    <span class="tTitle">Build</span>
+                    <span class="tSummary muted"
+                      >We build fast pages that work on every device.</span
+                    >
+                  </span>
+                </button>
+              </li>
+
+              <li class="tItem" style="--i: 3">
+                <button
+                  class="tCard glass-card"
+                  type="button"
+                  data-step="3"
+                  aria-expanded="false"
+                >
+                  <span class="tNode" aria-hidden="true"></span>
+                  <span class="tMeta">
+                    <span class="tKicker">Step 4</span>
+                    <span class="tTitle">Launch</span>
+                    <span class="tSummary muted"
+                      >We go live and help you feel confident.</span
+                    >
+                  </span>
+                </button>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="tOverlay" id="tOverlay" hidden>
+          <div class="tOverlay__backdrop" data-close="1"></div>
+
+          <div
+            class="tFocus glass-card"
+            role="region"
+            aria-label="Selected timeline step details"
+          >
+            <button
+              class="tClose"
+              type="button"
+              aria-label="Close details"
+              id="tClose"
+            >
+              <span aria-hidden="true">✕</span>
+            </button>
+
+            <p class="eyebrow tFocus__eyebrow" id="tEyebrow">Step</p>
+            <h3 class="tFocus__title" id="tTitle">Title</h3>
+            <p class="muted tFocus__lead" id="tLead">Lead</p>
+
+            <ul class="tBullets" id="tBullets"></ul>
+
+            <br />
+
+            <div class="tFocus__actions">
+              <a class="btn btn--primary" href="#contact">
+                <span>Book a Discovery Call</span>
+                <span class="btn__icon" aria-hidden="true">↗</span>
+              </a>
+
+              <button class="ghost" type="button" data-close="1">Close</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section
+        class="section section--portfolio"
+        id="portfolio"
+        aria-label="Portfolio"
+      >
+        <div class="container">
+          <div class="section__head">
+            <div class="section__title reveal" data-reveal>
+              <p class="eyebrow">Work</p>
+              <h2>Here are projects we built with care.</h2>
+            </div>
+
+            <p class="section__desc reveal" data-reveal>
+              <strong>
+                These websites are built to be clear, fast, and easy to use.
+              </strong>
+            </p>
+          </div>
+
+          <div class="work work--featured reveal" data-reveal>
+            <article class="workCard workCard--featured">
+              <a
+                class="workCard__link"
+                id="honorsLink"
+                href="#"
+                aria-label="View project: Clearpoint Website"
+              >
+                <div class="workCard__thumb" aria-hidden="true">
+                  <img
+                    src="/assets/Porfolio/Cabrillo.png"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+
+                <div class="workCard__body">
+                  <p class="workCard__kicker">Featured</p>
+                  <h3 class="workCard__title">
+                    Cabrillo College Honors Program Website
+                  </h3>
+                  <p class="workCard__summary">
+                    A clean website that helps students find what they need
+                    quickly.
+                  </p>
+
+                  <ul class="workCard__bullets">
+                    <li>Made the navigation simple and easy to follow.</li>
+                    <li>
+                      Organized the pages so the most important info comes
+                      first.
+                    </li>
+                    <li>Designed it to work well on phones and laptops.</li>
+                  </ul>
+
+                  <div class="workCard__meta">
+                    <span class="pill">Clarity</span>
+                    <span class="pill">Design</span>
+                    <span class="pill">Build</span>
+                    <span class="workCard__cta">View →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="workCard workCard--featured">
+              <a
+                class="workCard__link"
+                href="https://jared-esquivel.github.io/Visit-Kauai-now/"
+                aria-label="View project: Project Two"
+              >
+                <div class="workCard__thumb" aria-hidden="true">
+                  <img
+                    src="/assets/Porfolio/KauiaBeach.png"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+
+                <div class="workCard__body">
+                  <p class="workCard__kicker">Featured</p>
+                  <h3 class="workCard__title">Island of Kauai Website</h3>
+                  <p class="workCard__summary">
+                    A beautiful travel site that is easy to explore and fun to
+                    use.
+                  </p>
+
+                  <ul class="workCard__bullets">
+                    <li>
+                      Built clear sections so visitors can browse without
+                      getting lost.
+                    </li>
+                    <li>
+                      Used strong visuals while keeping the layout easy to read.
+                    </li>
+                    <li>Focused on a smooth mobile experience.</li>
+                  </ul>
+
+                  <div class="workCard__meta">
+                    <span class="pill">Design</span>
+                    <span class="pill">UX</span>
+                    <span class="pill">Build</span>
+                    <span class="workCard__cta">View →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+          </div>
+
+          <div class="workDivider reveal" data-reveal>
+            <span class="workDivider__line" aria-hidden="true"></span>
+            <span class="workDivider__label muted">More Projects</span>
+            <span class="workDivider__line" aria-hidden="true"></span>
+          </div>
+
+          <div class="work work--grid reveal" data-reveal>
+            <article class="workCard">
+              <a
+                class="workCard__link"
+                href="https://github.com/jared-esquivel/nestqueue"
+                aria-label="View project: Project Three"
+              >
+                <div class="workCard__thumb" aria-hidden="true">
+                  <img
+                    src="/assets/Porfolio/NestQueue.png"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="workCard__body">
+                  <h3 class="workCard__title">NEST Queue</h3>
+                  <p class="workCard__summary">
+                    A simple tool that helps IT stay organized with tickets.
+                  </p>
+                  <div class="workCard__meta">
+                    <span class="pill">UX</span>
+                    <span class="pill">Build</span>
+                    <span class="workCard__cta">View →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="workCard">
+              <a
+                class="workCard__link"
+                href="https://jared-esquivel.github.io/hackwatsonville-site/"
+                aria-label="View project: Project Four"
+              >
+                <div class="workCard__thumb" aria-hidden="true">
+                  <img
+                    src="/assets/Porfolio/HackWat.png"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="workCard__body">
+                  <h3 class="workCard__title">HackWatsonville</h3>
+                  <p class="workCard__summary">
+                    A clear event website that explains the purpose, details,
+                    and next steps for a student led highschool Hackathon!
+                  </p>
+                  <div class="workCard__meta">
+                    <span class="pill">Design</span>
+                    <span class="pill">Structure</span>
+                    <span class="workCard__cta">View →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="workCard">
+              <a
+                class="workCard__link"
+                href="https://jared-esquivel.github.io/Jared-Esquivel-s-Portfolio-/#contact"
+                aria-label="View project: Project Five"
+              >
+                <div class="workCard__thumb" aria-hidden="true">
+                  <img
+                    src="/assets/Porfolio/Portfolio.png"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="workCard__body">
+                  <h3 class="workCard__title">Personal Portfolio</h3>
+                  <p class="workCard__summary">
+                    A professional site that shows my work, skills, and story in
+                    a clean way.
+                  </p>
+                  <div class="workCard__meta">
+                    <span class="pill">Informative</span>
+                    <span class="pill">Build</span>
+                    <span class="workCard__cta">View →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+          </div>
+
+          <p class="workNote muted reveal" data-reveal>
+            Want to see more work? Ask during your discovery call.
+          </p>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+
+      <!-- CONTACT -->
+      <!-- CONTACT -->
+      <section class="section" id="contact" aria-label="Contact">
+        <div class="container">
+          <div class="section__head">
+            <div class="section__title reveal" data-reveal>
+              <p class="eyebrow">Contact</p>
+              <h2>Let’s talk about your website.</h2>
+            </div>
+
+            <p class="section__desc reveal" data-reveal>
+              <strong
+                >Tell us what you need. We will reply with clear next
+                steps.</strong
+              >
+            </p>
+          </div>
+
+          <div class="contact">
+            <!-- LEFT: Form -->
+            <form
+              class="form glass-card reveal"
+              data-reveal
+              action="https://formspree.io/f/mojvgqej"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Clearpoint Website Inquiry"
+              />
+              <input type="hidden" name="_template" value="table" />
+
+              <div class="form__grid">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                    inputmode="email"
+                  />
+                </div>
+
+                <div class="field field--full">
+                  <label for="project">What do you want to build?</label>
+                  <textarea
+                    id="project"
+                    name="project"
+                    rows="4"
+                    placeholder="What is your business, and what do you want your website to do?"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="form__actions">
+                <button class="btn btn--primary" type="submit">
+                  <span>Send message</span>
+                  <span class="btn__icon" aria-hidden="true">↗</span>
+                </button>
+
+                <a class="ghost" href="#schedule">Book a call instead</a>
+              </div>
+
+              <div
+                class="form__status"
+                id="formStatus"
+                role="status"
+                aria-live="polite"
+              ></div>
+            </form>
+
+            <!-- RIGHT: Details -->
+            <aside
+              class="contact__aside reveal"
+              data-reveal
+              aria-label="Details"
+            >
+              <div class="side-card">
+                <h3>What you will get</h3>
+                <ul class="list list--tight">
+                  <li>A clear plan and timeline</li>
+                  <li>A website that is easy to use</li>
+                  <li>A clean design that builds trust</li>
+                  <li>Fast pages that work on mobile</li>
+                </ul>
+              </div>
+
+              <div class="side-card">
+                <h3>What happens next</h3>
+                <p class="muted">
+                  After you reach out, we will ask a few questions. Then we will
+                  share a clear plan for your website.
+                </p>
+              </div>
+            </aside>
+
+            <br />
+
+            <!-- ✅ FULL-WIDTH Scheduler (spans both columns) -->
+            <section
+              class="schedule glass-card reveal"
+              data-reveal
+              id="schedule"
+              aria-label="Schedule a call"
+            >
+              <p class="eyebrow">Schedule</p>
+              <h3 style="margin: 0 0 0.75rem">
+                Pick a time for a discovery call
+              </h3>
+
+              <iframe
+                class="schedule__frame"
+                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0zEfPmXhAodI6PT0R-DVzctzO4gH_NvvkhHsHO5360H9lTbiGldxiIg_f3U7Vv3I7AHTPVQgcd?gv=true"
+                title="Google Calendar Appointment Scheduling"
+                loading="lazy"
+                frameborder="0"
+              ></iframe>
+            </section>
+          </div>
+        </div>
+
+        <div>
+          <footer class="site-footer" aria-label="Footer">
+            <div class="container footer__grid">
+              <!-- Brand -->
+              <div class="footer__brand">
+                <img
+                  src="/assets/NewLogo.png"
+                  alt="Clearpoint logo"
+                  class="footer__logo"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <p class="footer__tagline">
+                  “Clear websites that guide people to action.”
+                </p>
+
+                <a class="footer__cta btn btn--primary" href="#schedule">
+                  <span>Book a Discovery Call</span>
+                  <span class="btn__icon" aria-hidden="true">↗</span>
+                </a>
+              </div>
+
+              <!-- Services -->
+              <nav class="footer__col" aria-label="Services">
+                <h4>Services</h4>
+                <ul>
+                  <li><a href="#services">Plan & Discovery</a></li>
+                  <li><a href="#services">Design & Build</a></li>
+                  <li><a href="#services">Speed & Search</a></li>
+                  <li><a href="#services">Launch & Support</a></li>
+                </ul>
+              </nav>
+
+              <!-- Company -->
+              <nav class="footer__col" aria-label="Company">
+                <h4>Company</h4>
+                <ul>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#process">Process</a></li>
+                  <li><a href="#portfolio">Portfolio</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+              </nav>
+
+              <!-- Contact -->
+              <div class="footer__col" aria-label="Contact information">
+                <h4>Contact</h4>
+                <ul class="footer__contact">
+                  <li>
+                    <a href="mailto:jaredesquivel24@gmail.com"
+                      >jaredesquivel24@gmail.com</a
+                    >
+                  </li>
+                  <li><a href="#schedule">Schedule a call</a></li>
+                  <li class="muted">Santa Cruz County, CA</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="footer__bottom">
+              <p>
+                <span id="year"></span> Clearpoint Web Development & Strategy.
+                All rights reserved.
+              </p>
+            </div>
+          </footer>
+        </div>
+      </section>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
