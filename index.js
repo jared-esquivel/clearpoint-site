@@ -374,9 +374,7 @@
         "We help with domain and hosting if needed",
         "We share simple handoff notes",
       ],
-      deliverables: ["Launch checklist", "Handoff notes", "Go-live support", "Update options"],
-    },
-  ];
+     
 
   const timeline = document.getElementById("timeline");
   const cards = Array.from(document.querySelectorAll(".tCard"));
