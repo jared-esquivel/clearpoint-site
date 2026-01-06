@@ -925,32 +925,7 @@ textarea:focus {
   display: grid;
   gap: 0.35rem;
 }
-.tDeliver {
-  margin-top: 1rem;
-  padding-top: 0.9rem;
-  border-top: 1px solid rgba(223, 254, 244, 0.1);
-  display: grid;
-  gap: 0.55rem;
-}
-.tDeliver__label {
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(223, 254, 244, 0.68);
-}
-.tDeliver__row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.tChip {
-  border: 1px solid rgba(223, 254, 244, 0.12);
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 999px;
-  padding: 0.45rem 0.7rem;
-  font-size: 0.9rem;
-  color: rgba(223, 254, 244, 0.88);
-}
+
 
 /* Mobile: vertical */
 @media (max-width: 900px) {
