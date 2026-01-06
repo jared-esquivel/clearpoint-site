@@ -43,7 +43,6 @@
             <span class="nav__icon" aria-hidden="true"></span>
           </button>
 
-          <!-- ✅ FIXED: single UL -->
           <ul class="nav__menu" id="navMenu">
             <li><a class="nav__link" href="#about">About</a></li>
             <li><a class="nav__link" href="#services">Services</a></li>
@@ -112,7 +111,6 @@
         </div>
       </section>
 
-      <!-- SERVICES -->
       <!-- SERVICES -->
       <section class="section" id="services" aria-label="Services">
         <div class="container">
@@ -323,7 +321,11 @@
 
             <ul class="tBullets" id="tBullets"></ul>
 
-            <br />
+            <!-- ✅ ADDED so your JS can render deliverables -->
+            <div class="tDeliver" aria-label="Deliverables">
+              <p class="tDeliver__label">Deliverables</p>
+              <div class="tDeliver__row" id="tDeliver"></div>
+            </div>
 
             <div class="tFocus__actions">
               <a class="btn btn--primary" href="#contact">
@@ -549,9 +551,6 @@
       </section>
 
       <!-- CONTACT -->
-
-      <!-- CONTACT -->
-      <!-- CONTACT -->
       <section class="section" id="contact" aria-label="Contact">
         <div class="container">
           <div class="section__head">
@@ -637,11 +636,7 @@
             </form>
 
             <!-- RIGHT: Details -->
-            <aside
-              class="contact__aside reveal"
-              data-reveal
-              aria-label="Details"
-            >
+            <aside class="contact__aside reveal" data-reveal aria-label="Details">
               <div class="side-card">
                 <h3>What you will get</h3>
                 <ul class="list list--tight">
@@ -661,9 +656,7 @@
               </div>
             </aside>
 
-            <br />
-
-            <!-- ✅ FULL-WIDTH Scheduler (spans both columns) -->
+            <!-- FULL-WIDTH Scheduler -->
             <section
               class="schedule glass-card reveal"
               data-reveal
@@ -686,75 +679,70 @@
           </div>
         </div>
 
-        <div>
-          <footer class="site-footer" aria-label="Footer">
-            <div class="container footer__grid">
-              <!-- Brand -->
-              <div class="footer__brand">
-                <img
-                  src="assets/NewLogo.png"
-                  alt="Clearpoint logo"
-                  class="footer__logo"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <p class="footer__tagline">
-                  “Clear websites that guide people to action.”
-                </p>
-
-                <a class="footer__cta btn btn--primary" href="#schedule">
-                  <span>Book a Discovery Call</span>
-                  <span class="btn__icon" aria-hidden="true">↗</span>
-                </a>
-              </div>
-
-              <!-- Services -->
-              <nav class="footer__col" aria-label="Services">
-                <h4>Services</h4>
-                <ul>
-                  <li><a href="#services">Plan & Discovery</a></li>
-                  <li><a href="#services">Design & Build</a></li>
-                  <li><a href="#services">Speed & Search</a></li>
-                  <li><a href="#services">Launch & Support</a></li>
-                </ul>
-              </nav>
-
-              <!-- Company -->
-              <nav class="footer__col" aria-label="Company">
-                <h4>Company</h4>
-                <ul>
-                  <li><a href="#about">About</a></li>
-                  <li><a href="#process">Process</a></li>
-                  <li><a href="#portfolio">Portfolio</a></li>
-                  <li><a href="#contact">Contact</a></li>
-                </ul>
-              </nav>
-
-              <!-- Contact -->
-              <div class="footer__col" aria-label="Contact information">
-                <h4>Contact</h4>
-                <ul class="footer__contact">
-                  <li>
-                    <a href="mailto:jaredesquivel24@gmail.com"
-                      >jaredesquivel24@gmail.com</a
-                    >
-                  </li>
-                  <li><a href="#schedule">Schedule a call</a></li>
-                  <li class="muted">Santa Cruz County, CA</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="footer__bottom">
-              <p>
-                <span id="year"></span> Clearpoint Web Development & Strategy.
-                All rights reserved.
+        <footer class="site-footer" aria-label="Footer">
+          <div class="container footer__grid">
+            <div class="footer__brand">
+              <img
+                src="assets/NewLogo.png"
+                alt="Clearpoint logo"
+                class="footer__logo"
+                loading="lazy"
+                decoding="async"
+              />
+              <p class="footer__tagline">
+                “Clear websites that guide people to action.”
               </p>
+
+              <a class="footer__cta btn btn--primary" href="#schedule">
+                <span>Book a Discovery Call</span>
+                <span class="btn__icon" aria-hidden="true">↗</span>
+              </a>
             </div>
-          </footer>
-        </div>
+
+            <nav class="footer__col" aria-label="Services">
+              <h4>Services</h4>
+              <ul>
+                <li><a href="#services">Plan & Discovery</a></li>
+                <li><a href="#services">Design & Build</a></li>
+                <li><a href="#services">Speed & Search</a></li>
+                <li><a href="#services">Launch & Support</a></li>
+              </ul>
+            </nav>
+
+            <nav class="footer__col" aria-label="Company">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </nav>
+
+            <div class="footer__col" aria-label="Contact information">
+              <h4>Contact</h4>
+              <ul class="footer__contact">
+                <li>
+                  <a href="mailto:jaredesquivel24@gmail.com"
+                    >jaredesquivel24@gmail.com</a
+                  >
+                </li>
+                <li><a href="#schedule">Schedule a call</a></li>
+                <li class="muted">Santa Cruz County, CA</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer__bottom">
+            <p>
+              <span id="year"></span> Clearpoint Web Development & Strategy. All
+              rights reserved.
+            </p>
+          </div>
+        </footer>
       </section>
     </main>
+
     <script src="index.js"></script>
   </body>
 </html>
